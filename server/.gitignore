@@ -361,3 +361,62 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+# ASP.NET Core specific
+appsettings.Development.json
+appsettings.*.json
+*.csproj.user
+wwwroot/
+
+# Database connection strings and sensitive data
+*.config
+*.secrets.json
+secrets.json
+
+# Temporary files and logs
+*.log
+logs/
+*.tmp
+
+# Environment-specific files
+.env
+.env.local
+.env.development
+.env.production
+
+# Dependency and build artifacts
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+
+# Local database files (if testing locally)
+*.sqlite
+*.db
+
+# IDE-specific settings
+.idea/
+*.code-workspace
+.vscode/
+
+# Docker-related files (if using Docker for PostgreSQL or deployment)
+docker-compose.override.yml
+Dockerfile.user
+*.dockerignore
+
+# Testing and coverage
+test-results/
+coverage/
+*.trx
+
+# Local development artifacts
+*.swp
+*.swo
+*~
+
+# macOS-specific
+.DS_Store
+
+# Windows-specific
+Thumbs.db
+desktop.ini
