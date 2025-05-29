@@ -15,11 +15,4 @@
 	
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Application\" />
-    <Folder Include="Core\" />
-    <Folder Include="Presentation\" />
-    <Folder Include="Infrastructure\" />
-  </ItemGroup>
-
 </Project>
