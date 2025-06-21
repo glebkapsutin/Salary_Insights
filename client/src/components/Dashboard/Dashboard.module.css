@@ -1,0 +1,53 @@
+/* src/components/Dashboard.module.css */
+.dashboard {
+  padding: 20px;
+  background-color: #e6e6fa;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.searchInput {
+  padding: 5px;
+  border: 1px solid #6a0dad;
+  border-radius: 4px;
+}
+
+.filterSelect {
+  padding: 5px;
+  border: 1px solid #6a0dad;
+  border-radius: 4px;
+}
+
+.content {
+  display: grid;
+  gap: 20px;
+}
+
+.chartSection,
+.tableSection {
+  background: white;
+  padding: 15px;
+  border: 2px solid #6a0dad;
+  border-radius: 8px;
+}
+
+.title {
+  color: #6a0dad;
+  margin-bottom: 10px;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+}
+
+.error {
+  text-align: center;
+  color: red;
+  padding: 20px;
+}
