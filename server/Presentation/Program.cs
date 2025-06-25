@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Salary_Insights.Infrastructure.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,7 +9,8 @@ var isDocker = Environment.GetEnvironmentVariable("DOTNET_RUNNING_IN_CONTAINER")
 var connectionString = isDocker
     ? builder.Configuration.GetConnectionString("DockerConnection")
     : builder.Configuration.GetConnectionString("DefaultConnection");
-
+builder.Services.AddDbContext<SalaryInsightsDbContext>(options =>
+    options.UseNpgsql(connectionString));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
