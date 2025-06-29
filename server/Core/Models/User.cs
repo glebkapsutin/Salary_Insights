@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Salary_Insights.Core.Models
+namespace server.Core.Models
 {
     public class User
     {

@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Salary_Insights.Application.Interfaces;
-using Salary_Insights.Core.Models;
+using server.Application.Interfaces;
+using server.Core.Models;
 using System.Security.Claims;
 
-namespace Salary_Insights.Presentation.Controllers
+namespace server.Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

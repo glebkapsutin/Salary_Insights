@@ -1,10 +1,10 @@
-using Salary_Insights.Core.Models;
+using server.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Salary_Insights.Application.Interfaces
+namespace server.Application.Interfaces
 {
     public interface IUserService 
     {

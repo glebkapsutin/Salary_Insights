@@ -1,4 +1,4 @@
-﻿namespace Salary_Insights.Core.Models
+﻿namespace server.Core.Models
 {
     public class Department
     {

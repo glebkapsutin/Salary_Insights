@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Salary_Insights.Application.Interfaces;
-using Salary_Insights.Core.Models;
-using Salary_Insights.Infrastructure.Data;
+using server.Application.Interfaces;
+using server.Core.Models;
+using server.Infrastructure.Data;
 
-namespace Salary_Insights.Infrastructure.Repositories
+namespace server.Infrastructure.Repositories
 {
     public class UserRepository : IUserRepository
     {

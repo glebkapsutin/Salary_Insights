@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace Salary_Insights.Migrations
+namespace server.Migrations
 {
     /// <inheritdoc />
     public partial class initial : Migration

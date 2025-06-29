@@ -1,7 +1,7 @@
-﻿using Salary_Insights.Application.Interfaces;
-using Salary_Insights.Core.Models;
+﻿using server.Application.Interfaces;
+using server.Core.Models;
 
-namespace Salary_Insights.Application.Services
+namespace server.Application.Services
 {
     public class UserService : IUserService
     {

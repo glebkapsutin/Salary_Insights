@@ -1,7 +1,7 @@
-﻿using Salary_Insights.Core.Models;
+﻿using server.Core.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Salary_Insights.Infrastructure.Data
+namespace server.Infrastructure.Data
 {
     public class SalaryInsightsDbContext : DbContext
     {

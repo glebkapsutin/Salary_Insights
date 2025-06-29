@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Salary_Insights.Infrastructure.Data
+namespace server.Infrastructure.Data
 {
     public static class DataBaseInitializer
     {

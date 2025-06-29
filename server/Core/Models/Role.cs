@@ -1,6 +1,6 @@
-﻿using Salary_Insights.Core.Enums;
+﻿using server.Core.Enums;
 
-namespace Salary_Insights.Core.Models
+namespace server.Core.Models
 {
     public class Role
     {

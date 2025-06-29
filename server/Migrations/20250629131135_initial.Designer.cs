@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using Salary_Insights.Infrastructure.Data;
+using server.Infrastructure.Data;
 
 #nullable disable
 
-namespace Salary_Insights.Migrations
+namespace server.Migrations
 {
     [DbContext(typeof(SalaryInsightsDbContext))]
     [Migration("20250629131135_initial")]

@@ -1,4 +1,4 @@
-﻿namespace Salary_Insights.Core.Enums
+﻿namespace server.Core.Enums
 {
     public enum RoleType
     {
