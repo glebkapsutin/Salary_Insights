@@ -12,8 +12,8 @@ using Salary_Insights.Infrastructure.Data;
 namespace Salary_Insights.Migrations
 {
     [DbContext(typeof(SalaryInsightsDbContext))]
-    [Migration("20250625200835_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250629131135_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

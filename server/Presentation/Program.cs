@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using Salary_Insights.Application.Interfaces;
+using Salary_Insights.Application.Services;
 using Salary_Insights.Infrastructure.Data;
+using Salary_Insights.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +15,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddScoped<IUserRepository,UserRepository>();
+builder.Services.AddScoped<IUserService,UserService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

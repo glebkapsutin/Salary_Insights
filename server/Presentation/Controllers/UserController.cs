@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Salary_Insights.Application.Interfaces;
+using Salary_Insights.Core.Models;
+using System.Security.Claims;
 
 namespace Salary_Insights.Presentation.Controllers
 {
@@ -7,5 +10,80 @@ namespace Salary_Insights.Presentation.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        private readonly IUserService _userService;
+
+        public UserController(IUserService userService)
+        {
+            _userService = userService;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
+        {
+            var users = await _userService.GetUsersAsync();
+            return Ok(users);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<User>> GetUserId(int id)
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+            {
+                return Unauthorized(new { message = "Пользователь не авторизован" });
+            }
+
+            var user = await _userService.GetUserByIdAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return Ok(user);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<User>> PostUser(User userItem)
+        {
+            if (userItem == null)
+            {
+                return BadRequest("User item is null");
+            }
+
+            var user = await _userService.CreateUserAsync(userItem);
+            return CreatedAtAction(nameof(GetUserId), new { id = user.Id }, user);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteUser(int id)
+        {
+            await _userService.DeleteUserAsync(id);
+            return NoContent();
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> PutUser(int id, User userItem)
+        {
+            await _userService.UpdateUserAsync(id, userItem);
+            return NoContent();
+        }
+
+        [HttpGet("current")]
+        public async Task<ActionResult> GetCurrentUser()
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+            {
+                return Unauthorized(new { message = "Пользователь не авторизован" });
+            }
+
+            int userId = int.Parse(userIdClaim.Value);
+            var user = await _userService.GetUserByIdAsync(userId);
+            if (user == null)
+            {
+                return NotFound(new { message = "Пользователь не найден" });
+            }
+            return Ok(user);
+        }
     }
 }
+
