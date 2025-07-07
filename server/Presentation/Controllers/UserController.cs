@@ -58,6 +58,8 @@ namespace server.Presentation.Controllers
         {
             await _userService.DeleteUserAsync(id);
             return NoContent();
+
+
         }
 
         [HttpPut("{id}")]
