@@ -33,6 +33,14 @@ namespace server.Infrastructure.Data
                 .HasOne(d => d.Manager)
                 .WithOne() // Один-к-одному
                 .HasForeignKey<Department>(d => d.ManagerId);
+            modelBuilder.Entity<Salary>()
+                .HasOne(s=> s.Employee)
+                .WithMany(u =>u.Salaries)
+                .HasForeignKey(s => s.EmployeeId);
+            modelBuilder.Entity<SalaryHistory>()
+                .HasOne(sh => sh.Employee)
+                .WithMany()
+                .HasForeignKey(sh => sh.EmployeeId);
         }
 
 
