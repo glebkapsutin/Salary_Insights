@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using server.Infrastructure.Data;
@@ -11,9 +12,11 @@ using server.Infrastructure.Data;
 namespace server.Migrations
 {
     [DbContext(typeof(SalaryInsightsDbContext))]
-    partial class SalaryInsightsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250707083707_AddSalaryAndSalaryHistoryTables")]
+    partial class AddSalaryAndSalaryHistoryTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

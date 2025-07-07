@@ -40,8 +40,8 @@ namespace server.Infrastructure.Repositories
                 throw new KeyNotFoundException("User not found");
             }
 
-    
 
+            _dbContext.Entry(existingUser).CurrentValues.SetValues(user);
             await _dbContext.SaveChangesAsync();
         }
 

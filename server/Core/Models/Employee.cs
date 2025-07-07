@@ -21,6 +21,8 @@
 
         public DateTime TerminationDate { get; set; }
 
+        public List<Salary> Salaries { get; set; }
+
 
 
     }
